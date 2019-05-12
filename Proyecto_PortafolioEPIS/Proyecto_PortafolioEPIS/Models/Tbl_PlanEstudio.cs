@@ -5,7 +5,10 @@ namespace Proyecto_PortafolioEPIS.Models
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
+    using System.Linq;
+    using System.Data.Entity;
 
+    [Table("Tbl_PlanEstudio")]
     public partial class Tbl_PlanEstudio
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -51,5 +54,70 @@ namespace Proyecto_PortafolioEPIS.Models
         public virtual ICollection<Tbl_DetallePlanEstudio> Tbl_DetallePlanEstudio { get; set; }
 
         public virtual Tbl_Semestre Tbl_Semestre { get; set; }
+
+
+        //Metodo Listar
+        public List<Tbl_PlanEstudio> Listar()
+        {
+            var objPlanEstudio = new List<Tbl_PlanEstudio>();
+            try
+            {
+                using (var db = new Model1())
+                {
+                    objPlanEstudio = db.Tbl_PlanEstudio.ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            return objPlanEstudio;
+        }
+
+        //Metodo Obtener
+        public Tbl_PlanEstudio Obtener(int id)//retorna solo un objeto
+        {
+            var objPlanEstudio = new Tbl_PlanEstudio();
+            try
+            {
+                using (var db = new Model1())
+                {
+                    objPlanEstudio = db.Tbl_PlanEstudio
+                                    .Where(x => x.Codigo_PlanEstudio == id)
+                                    .SingleOrDefault();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            return objPlanEstudio;
+        }
+
+        //Metodo Guardar
+
+        public void Guardar()
+        {
+            try
+            {
+                using (var db = new Model1())
+                {
+                    if (this.Codigo_PlanEstudio > 0)//sis existe un valor mayor a cero es porque existe registro
+                    {
+                        db.Entry(this).State = System.Data.Entity.EntityState.Modified;
+                    }
+                    else
+                    {
+                        //SINO EXISTE EL REGISTRO LO GRABA(nuevo)
+                        db.Entry(this).State = System.Data.Entity.EntityState.Added;
+                    }
+                    db.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
     }
 }

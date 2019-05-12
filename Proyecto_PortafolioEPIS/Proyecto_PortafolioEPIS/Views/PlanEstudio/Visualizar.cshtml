@@ -1,0 +1,99 @@
+﻿@model Proyecto_PortafolioEPIS.Models.Tbl_PlanEstudio
+@{
+    ViewBag.Title = "Visualizar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="block-header">
+    <div class="row">
+        <div class="col-lg-7 col-md-6 col-sm-12">
+            <h2>Visualizar Plan de Estudio</h2>
+            <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="~/Home/Index"><i class="zmdi zmdi-home"></i> Portafolio EPIS</a></li>
+                <li class="breadcrumb-item">Plan de Estudio</li>
+                <li class="breadcrumb-item active">Visualizar Plan de Estudio</li>
+            </ul>
+            <button class="btn btn-primary btn-icon mobile_menu" type="button"><i class="zmdi zmdi-sort-amount-desc"></i></button>
+        </div>
+        <div class="col-lg-5 col-md-6 col-sm-12">
+            <button class="btn btn-primary btn-icon float-right right_icon_toggle_btn" type="button"><i class="zmdi zmdi-arrow-right"></i></button>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+
+    <!-- Multi Column -->
+    <div class="row clearfix">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="card">
+                <div class="header">
+                    <h2><strong>Mantenimiento</strong> Plan de Estudio</h2>
+                    <ul class="header-dropdown">
+                        <li class="dropdown">
+                            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <i class="zmdi zmdi-more"></i> </a>
+                            <ul class="dropdown-menu dropdown-menu-right">
+                                <li><a href="javascript:void(0);">Action</a></li>
+                                <li><a href="javascript:void(0);">Another action</a></li>
+                                <li><a href="javascript:void(0);">Something else</a></li>
+                            </ul>
+                        </li>
+                        <li class="remove">
+                            <a role="button" class="boxs-close"><i class="zmdi zmdi-close"></i></a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="body js-sweetalert">
+
+                    <h2 class="card" text-center>Visualizar de Plan de Estudio</h2>
+
+                    <br />
+                    <div class="text-right">
+                        <a href="~/Semestre/AgregarEditar/" class="btn btn-secondary text-right">Nuevo Registro</a>
+                    </div>
+                    <br />
+
+
+                    <div class="card">
+                        <div class="card-header">
+                            Informacion detallada
+                        </div>
+                        <div class="card-body">
+                            <dl class="dl-horizontal">
+                                <dt>Codigo</dt>
+                                <dd>@Model.Codigo_PlanEstudio</dd>
+                                <dt>Codigo Semestre</dt>
+                                <dd>@Model.Codigo_Semestre</dd>
+                                <dt>Nombre</dt>
+                                <dd>@Model.Nombre_PlanEstudio</dd>
+                                <dt>Fecha Inicio</dt>
+                                <dd>@Model.FechaInicio_PlanEstudio</dd>
+                                <dt>Fecha Fin</dt>
+                                <dd>@Model.FechaFin_PlanEstudio</dd>
+                                <dt>Total Cursos Obligatorios</dt>
+                                <dd>@Model.TotalCursosObligatorios_PlanEstudio</dd>
+                                <dt>Total Cursos Electivos</dt>
+                                <dd>@Model.TotalCursosElectivos_PlanEstudio</dd>
+                                <dt>Total Creditos Obligatorios</dt>
+                                <dd>@Model.TotalCreditosObligatorios_PlanEstudio</dd>
+                                <dt>Total Creditos Electivos</dt>
+                                <dd>@Model.TotalCreditosElectivos_PlanEstudio</dd>
+                                <dt>Total Creditos Extracurriculares</dt>
+                                <dd>@Model.TotalCreditosExtracurriculares_PlanEstudio</dd>
+                                <dt>Total Creditos Practicas</dt>
+                                <dd>@Model.TotalCreditosPracticas_PlanEstudio</dd>
+                                <dt>Estado</dt>
+                                <dd>@(Model.Estado_PlanEstudio == "A" ? "Activo" : "Inactivo")</dd>
+                            </dl>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
