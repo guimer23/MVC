@@ -320,7 +320,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CargaAcademicaController.cs" />
     <Compile Include="Controllers\CursoController.cs" />
+    <Compile Include="Controllers\Mantenimiento\PlanEstudioController.cs" />
     <Compile Include="Controllers\Mantenimiento\SeccionController.cs" />
     <Compile Include="Controllers\Mantenimiento\SemestreController.cs" />
     <Compile Include="Global.asax.cs">
@@ -349,6 +351,9 @@
     <Content Include="Views\Curso\Index.cshtml" />
     <Content Include="Views\Seccion\Index.cshtml" />
     <Content Include="Views\Semestre\Index.cshtml" />
+    <Content Include="Views\CargaAcademica\Index.cshtml" />
+    <Content Include="Views\CargaAcademica\Nuevo.cshtml" />
+    <Content Include="Views\PlanEstudio\Agregar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
