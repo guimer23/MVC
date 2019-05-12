@@ -6,9 +6,9 @@ using System.Web.Mvc;
 
 namespace Proyecto_PortafolioEPIS.Controllers.Mantenimiento
 {
-    public class CicloController : Controller
+    public class SeccionController : Controller
     {
-        // GET: Ciclo
+        // GET: Seccion
         public ActionResult Index()
         {
             return View();

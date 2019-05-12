@@ -313,7 +313,8 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CursoController.cs" />
-    <Compile Include="Controllers\Mantenimiento\CicloController.cs" />
+    <Compile Include="Controllers\Mantenimiento\SeccionController.cs" />
+    <Compile Include="Controllers\Mantenimiento\SemestreController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -325,7 +326,8 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Curso\Index.cshtml" />
-    <Content Include="Views\Ciclo\Index.cshtml" />
+    <Content Include="Views\Seccion\Index.cshtml" />
+    <Content Include="Views\Semestre\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
