@@ -42,7 +42,7 @@ namespace Proyecto_PortafolioEPIS.Controllers.Mantenimiento
             }
             else
             {
-                return View("~/Views/PlanEstudio/Agregar");
+                return View("~/Views/PlanEstudio/Agregar.cshtml");
             }
         }
 
