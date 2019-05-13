@@ -43,7 +43,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -320,6 +328,19 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Model1.cs" />
+    <Compile Include="Models\Person.cs" />
+    <Compile Include="Models\Student.cs" />
+    <Compile Include="Models\sysdiagrams.cs" />
+    <Compile Include="Models\Tbl_CargaAcademica.cs" />
+    <Compile Include="Models\Tbl_CargoDocente.cs" />
+    <Compile Include="Models\Tbl_DetalleCargaAcademica.cs" />
+    <Compile Include="Models\Tbl_DetallePlanEstudio.cs" />
+    <Compile Include="Models\Tbl_Docente.cs" />
+    <Compile Include="Models\Tbl_PlanEstudio.cs" />
+    <Compile Include="Models\Tbl_Profesion.cs" />
+    <Compile Include="Models\Tbl_Seccion.cs" />
+    <Compile Include="Models\Tbl_Semestre.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -329,11 +350,9 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Curso\Index.cshtml" />
     <Content Include="Views\Seccion\Index.cshtml" />
-    <Content Include="Views\Semestre\Index.cshtml" />
     <Content Include="Views\CargaAcademica\Index.cshtml" />
     <Content Include="Views\CargaAcademica\Nuevo.cshtml" />
     <Content Include="Views\PlanEstudio\Agregar.cshtml" />
-    <Content Include="Views\PlanEstudio\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -343,7 +362,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
