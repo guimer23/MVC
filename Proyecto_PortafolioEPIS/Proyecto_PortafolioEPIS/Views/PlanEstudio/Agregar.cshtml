@@ -10,7 +10,7 @@
             <h2>Agregar Plan de Estudio</h2>
             <ul class="breadcrumb">
                 <li class="breadcrumb-item"><a href="~/Home/Index"><i class="zmdi zmdi-home"></i> Portafolio EPIS</a></li>
-                <li class="breadcrumb-item">Plan de Estudio</li>
+                <li class="breadcrumb-item"><a href="~/PlanEstudio/Index"><i class="zmdi"></i>Plan de Estudio</a></li>
                 <li class="breadcrumb-item active">@(Model.Codigo_PlanEstudio > 0 ? Model.Nombre_PlanEstudio : "Nuevo Registro")</li>
             </ul>
             <button class="btn btn-primary btn-icon mobile_menu" type="button"><i class="zmdi zmdi-sort-amount-desc"></i></button>
@@ -20,7 +20,7 @@
         </div>
     </div>
 </div>
-@using (Html.BeginForm("Guardar", "PlanEstudio", FormMethod.Post, new { id = "frm-semestre" }))
+@using (Html.BeginForm("Guardar", "PlanEstudio", FormMethod.Post))
 {
     @Html.HiddenFor(x => x.Codigo_PlanEstudio)
     <div class="container-fluid">
@@ -53,16 +53,16 @@
                                     <div class="form-group">
                                         <select class="form-control show-tick ms select2" data-placeholder="Seleccionar Semestre">
                                             <option></option>
-                                            <option>@Html.TextBoxFor(x => x.Codigo_Semestre, new { @class = "form-control", disabled = true })</option>
-                                         
+                                            <option>@Model.Codigo_Semestre</option>
+
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="email_address">Nombre Plan de Estudio:</label>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Plan de Estudio">
-                                        @Html.TextBoxFor(x => x.Nombre_PlanEstudio, new { @class = "form-control" })
+                                        <input type="text" class="form-control" value="@Model.Nombre_PlanEstudio" placeholder="Plan de Estudio">
+
                                     </div>
                                 </div>
                             </div>
@@ -73,7 +73,8 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="zmdi zmdi-calendar"></i></span>
                                         </div>
-                                        <input type="text" class="form-control datepicker" placeholder="Seleccionar Fecha Inicio.">
+                                        <input type="text" class="form-control datepicker" value="@Model.FechaInicio_PlanEstudio" placeholder="Seleccionar Fecha Inicio.">
+
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -82,7 +83,8 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="zmdi zmdi-calendar"></i></span>
                                         </div>
-                                        <input type="text" class="form-control datepicker" placeholder="Seleccionar Fecha Fin.">
+                                        <input type="text" class="form-control datepicker" value="@Model.FechaFin_PlanEstudio" placeholder="Seleccionar Fecha Fin.">
+
                                     </div>
                                 </div>
 
@@ -92,7 +94,7 @@
                                     <label for="email_address">Total Cursos Obligatorios:</label>
                                     <div class="form-group">
                                         <div class="input-group spinner" data-trigger="spinner">
-                                            <input type="text" class="form-control text-center" value="1" data-rule="quantity">
+                                            <input type="text" class="form-control text-center" value="@Model.TotalCursosObligatorios_PlanEstudio" data-rule="quantity">
                                             <div class="input-group-append">
                                                 <span class="input-group-text">
                                                     <a href="javascript:void(0);" class="spin-up" data-spin="up"><i class="zmdi zmdi-caret-up"></i></a>
@@ -106,7 +108,7 @@
                                     <label for="email_address">Total Cursos Electivos:</label>
                                     <div class="form-group">
                                         <div class="input-group spinner" data-trigger="spinner">
-                                            <input type="text" class="form-control text-center" value="1" data-rule="quantity">
+                                            <input type="text" class="form-control text-center" value="@Model.TotalCursosElectivos_PlanEstudio" data-rule="quantity">
                                             <div class="input-group-append">
                                                 <span class="input-group-text">
                                                     <a href="javascript:void(0);" class="spin-up" data-spin="up"><i class="zmdi zmdi-caret-up"></i></a>
@@ -122,7 +124,8 @@
                                     <label for="email_address">Total Créditos Obligatorios:</label>
                                     <div class="form-group">
                                         <div class="input-group spinner" data-trigger="spinner">
-                                            <input type="text" class="form-control text-center" value="1" data-rule="quantity">
+                                            <input type="text" class="form-control text-center" value="@Model.TotalCreditosObligatorios_PlanEstudio" data-rule="quantity">
+
                                             <div class="input-group-append">
                                                 <span class="input-group-text">
                                                     <a href="javascript:void(0);" class="spin-up" data-spin="up"><i class="zmdi zmdi-caret-up"></i></a>
@@ -136,7 +139,8 @@
                                     <label for="email_address">Total Créditos Electivos:</label>
                                     <div class="form-group">
                                         <div class="input-group spinner" data-trigger="spinner">
-                                            <input type="text" class="form-control text-center" value="1" data-rule="quantity">
+                                            <input type="text" class="form-control text-center" value="@Model.TotalCreditosElectivos_PlanEstudio" data-rule="quantity">
+
                                             <div class="input-group-append">
                                                 <span class="input-group-text">
                                                     <a href="javascript:void(0);" class="spin-up" data-spin="up"><i class="zmdi zmdi-caret-up"></i></a>
@@ -152,7 +156,8 @@
                                     <label for="email_address">Total Créditos Extracurriculares:</label>
                                     <div class="form-group">
                                         <div class="input-group spinner" data-trigger="spinner">
-                                            <input type="text" class="form-control text-center" value="1" data-rule="quantity">
+                                            <input type="text" class="form-control text-center" value="@Model.TotalCreditosExtracurriculares_PlanEstudio" data-rule="quantity">
+
                                             <div class="input-group-append">
                                                 <span class="input-group-text">
                                                     <a href="javascript:void(0);" class="spin-up" data-spin="up"><i class="zmdi zmdi-caret-up"></i></a>
@@ -166,7 +171,7 @@
                                     <label for="email_address">Total Créditos Prácticas:</label>
                                     <div class="form-group">
                                         <div class="input-group spinner" data-trigger="spinner">
-                                            <input type="text" class="form-control text-center" value="1" data-rule="quantity">
+                                            <input type="text" class="form-control text-center" value="@Model.TotalCreditosPracticas_PlanEstudio" data-rule="quantity">
                                             <div class="input-group-append">
                                                 <span class="input-group-text">
                                                     <a href="javascript:void(0);" class="spin-up" data-spin="up"><i class="zmdi zmdi-caret-up"></i></a>
@@ -177,25 +182,35 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row clearfix">
-                                <div class="col-md-12">
-                                    <label for="email_address">Estado:</label>
-                                    <div class="form-group">
-                                        <div class="checkbox">
-                                            <input id="remember_me" type="checkbox">
-                                            <label for="remember_me">
-                                                Activar o desactivar
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="form-group">
+                                @Html.Label("Estado")
+                                <select name="estado" class="form-control">
+                                    <option @(Model.Estado_PlanEstudio == "" ? "Selected" : "") value="">Seleccione</option>
+                                    <option @(Model.Estado_PlanEstudio== "A" ? "Selected" : "") value="A">Activo</option>
+                                    <option @(Model.Estado_PlanEstudio == "I" ? "Selected" : "") value="I">Inactivo</option>
+                                </select>
+
                             </div>
+                            @*<div class="row clearfix">
+            <div class="col-md-12">
+                <label for="email_address">Estado:</label>
+                <div class="form-group">
+                    <div class="checkbox">
+                        <input id="remember_me" value="@Model.Estado_PlanEstudio" type="checkbox">
+
+                        <label for="remember_me">
+                            Activar o desactivar
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>*@
 
                             <div class="row clearfix">
                                 <div class="col-lg-12 col-md-12 col-sm-12">
 
                                 </div>
-                                <button type="button" class="btn btn-raised btn-primary btn-round waves-effect m-l-20" data-type="success">AGREGAR</button>
+                                <button type="button" class="btn btn-raised btn-primary btn-round waves-effect m-l-20">AGREGAR</button>
                             </div>
                         </form>
                     </div>

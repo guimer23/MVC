@@ -10,8 +10,8 @@
             <h2>Agregar Plan de Estudio</h2>
             <ul class="breadcrumb">
                 <li class="breadcrumb-item"><a href="~/Home/Index"><i class="zmdi zmdi-home"></i> Portafolio EPIS</a></li>
-                <li class="breadcrumb-item">Plan de Estudio</li>
-                <li class="breadcrumb-item active">Listar Plan de Estudio</li>
+                <li class="breadcrumb-item"><a href="~/PlanEstudio/Index"><i class="zmdi"></i>Plan de Estudio</a></li>
+                <li class="breadcrumb-item active">Listar</li>
             </ul>
             <button class="btn btn-primary btn-icon mobile_menu" type="button"><i class="zmdi zmdi-sort-amount-desc"></i></button>
         </div>
@@ -54,7 +54,7 @@
                     </div>
                     <br />
 
-                    <table class="table">
+                    <table class="table table-bordered">
                         <thead>
                             <tr>
                                 <th style="width:50px">Codigo</th>
@@ -73,7 +73,6 @@
                             {
                             <tr>
                                 <th>@(p.Codigo_PlanEstudio)</th>
-                                <th>@(p.Nombre_PlanEstudio)</th>
                                 <th>@(p.Codigo_Semestre)</th>
                                 <th>@(p.Nombre_PlanEstudio)</th>
                                 <th>@(p.FechaInicio_PlanEstudio)</th>
@@ -90,6 +89,7 @@
                         </tbody>
 
                     </table>
+
                 </div>
 
                 </div>
