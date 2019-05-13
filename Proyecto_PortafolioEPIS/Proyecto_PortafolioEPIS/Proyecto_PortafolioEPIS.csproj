@@ -333,6 +333,7 @@
     <Content Include="Views\CargaAcademica\Index.cshtml" />
     <Content Include="Views\CargaAcademica\Nuevo.cshtml" />
     <Content Include="Views\PlanEstudio\Agregar.cshtml" />
+    <Content Include="Views\PlanEstudio\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
