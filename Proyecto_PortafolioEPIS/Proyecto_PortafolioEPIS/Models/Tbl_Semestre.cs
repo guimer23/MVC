@@ -5,6 +5,8 @@ namespace Proyecto_PortafolioEPIS.Models
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
+    using System.Linq;
+    using System.Data.Entity;
 
     public partial class Tbl_Semestre
     {
@@ -37,5 +39,25 @@ namespace Proyecto_PortafolioEPIS.Models
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Tbl_PlanEstudio> Tbl_PlanEstudio { get; set; }
+
+
+        //Metodo listar
+        public List<Tbl_Semestre> Listar()//retorna una coleccion
+        {
+            var objsemestre = new List<Tbl_Semestre>();
+            try
+            {
+                using (var db = new Model1())
+                {
+                    objsemestre = db.Tbl_Semestre.ToList();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            return objsemestre;
+        }
     }
 }
